@@ -6,8 +6,8 @@ import os from "os";
 let counter = 1;
 
 //! Creating folder in d drive
-if (!fs.existsSync(`d:\\Text Files`)) {
-  fs.mkdirSync("d:\\Text files");
+if (!fs.existsSync(path.join("d:", "Text files"))) {
+  fs.mkdirSync(path.join("d:", "Text files"));
   //   console.log("created");
 }
 
@@ -82,7 +82,7 @@ const readFileFun = () => {
   console.log(`2) Desktop`);
   rl.question("Select read location :-", (option) => {
     if (option === "1") {
-      const path1 = "d:\\Text files";
+      const path1 = path.join("d:", "Text files");
       printData(path1);
     } else if (option === "2") {
       const path2 = path.join(
@@ -126,7 +126,7 @@ const printData = (filepath) => {
   showMenu();
 };
 
-const deleteFile = (filepath) => {
+const deleteFile = () => {
   console.log("Select location :-");
   console.log(`1) D drive Text File folder`);
   console.log(`2) Desktop`);
